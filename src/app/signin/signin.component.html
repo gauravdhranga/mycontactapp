@@ -1,0 +1,25 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1 style="margin-left:40%;color:teal;text-shadow: 0.5px 0.5px 5px black">MyContact App</h1>
+<div class="container">
+<h2 style="margin-left:35%">Sign In</h2>
+  <hr>
+    <h4>{{stat}}</h4>
+
+    <label>Username </label>
+    <input type="text" class="form-control" [(ngModel)]="login.username" placeholder="Enter Username">
+    <label>Password </label>
+    <input type="password" class="form-control" [(ngModel)]="login.password" placeholder="Enter Password">
+    <br>
+    <button class="btn btn-success success" (click)="submit()">Login</button><br><br>
+    Don't have an Account? <button style="background:transparent;color:teal;border:none;" (click)="signup()">Sign up</button>Here
+
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>Contact List</title>
+
+</head>
+<body>
+<h1 style="margin-left:40%;color:teal;text-shadow: 0.5px 0.5px 5px black">MyContact App</h1>
+<div class="container">
+  <br>
+  <h3 style="float:left">Hello {{id}}</h3>
+  <button style="float:right;margin-right:7px" class="btn btn-success" (click)="logout()">Logout</button><br><br><br>
+
+      <div class="input-group" style="width:30%">
+        <input type="text" class="form-control" [(ngModel)]="searchitem" placeholder="Search by Name" name="srch-term" id="srch-term">
+        <div class="input-group-btn">
+          <button class="btn btn-default" (click)="search()"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+      </div>
+
+  <div>
+  <li *ngFor = "let sample of suggestion"><button class = "btn but" (click)="find(sample._id)">{{sample.name}}</button></li>
+  </div>
+  <h3 style="clear:left">Manage Your Contacts</h3>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>name</th>
+      <th>Email</th>
+      <th>Number</th>
+      <th>Action</th>
+      <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><input type="text" class="form-control" [(ngModel)]="xyz.name" placeholder="Enter Name" ></td>
+      <td><input type="email" class="form-control" [(ngModel)]="xyz.email" placeholder="Enter E-mail" ></td>
+      <td><input type="text" class="form-control" [(ngModel)]="xyz.contact" placeholder="Enter Contact Number" ></td>
+      <td><button class="btn btn-success" (click)="addContact()">Add Contact</button></td>
+      <td><button class="btn btn-info" (click)="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" (click)="clear()">Clear</button></td>
+
+    </tr>
+    <tr *ngFor="let abc of arr">
+        <td>{{abc.name}}</td>
+        <td>{{abc.email}}</td>
+        <td>{{abc.contact}}</td>
+        <td><button class="btn btn-danger" (click)="remove(abc._id)">Remove</button></td>
+        <td><button class="btn btn-warning" (click)="edit(abc._id)">Edit</button></td>
+    </tr>
+
+    </tbody>
+  </table>
+  </div>
+
+</body>
+</html>
+
